@@ -1,0 +1,18 @@
+development:
+  backend:
+    bucket: your-terraform-dev-bucket
+    prefix: cdk/development/
+    dynamodb_table: terraform-state-lock
+    region: us-east-1
+  stacks:
+    - id: demo
+      state_key: demo/terraform.demo.tfstate
+production:
+  backend:
+    bucket: your-terraform-prod-bucket
+    prefix: cdk/production/
+    dynamodb_table: terraform-state-lock
+    region: us-east-1
+  stacks:
+    - id: demo
+      state_key: demo/terraform.demo.tfstate
